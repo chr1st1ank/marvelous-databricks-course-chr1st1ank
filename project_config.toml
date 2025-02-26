@@ -1,0 +1,6 @@
+
+data_file = "/Volumes/xdiv_sbox_dev/uc_sandbox/data/Hotel Reservations.csv"
+catalog_name = "xdiv_sbox_dev"
+schema_name = "uc_sandbox"
+table_name_prefix = "ck_hotel_reservations"
+test_ratio = 0.2

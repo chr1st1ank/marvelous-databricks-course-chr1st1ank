@@ -1,17 +1,17 @@
+"""
+Load the source data, split it into train and test sets, and save them to a catalog table.
+"""
 
 # COMMAND ----------
-import pathlib
+from pathlib import Path
+
 from pyspark.sql import SparkSession
+
 from booking import preprocessing
-import pandas as pd
+from booking.config import Config
 
-class Config:
-    data_file = "/Volumes/xdiv_sbox_dev/uc_sandbox/data/Hotel Reservations.csv"
-    catalog_name = "xdiv_sbox_dev"
-    schema_name = "uc_sandbox"
-    table_name_prefix = "ck_hotel_reservations"
-
-config = Config()
+config = Config.from_toml(Path("../project_config.toml"))
+config
 
 # COMMAND ----------
 spark = SparkSession.builder.getOrCreate()
