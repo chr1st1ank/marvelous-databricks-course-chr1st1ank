@@ -11,7 +11,7 @@ from booking import preprocessing
 from booking.config import Config
 
 config = Config.from_toml(Path("../project_config.toml"))
-config.dict()
+config.model_dump()
 
 # COMMAND ----------
 spark = SparkSession.builder.getOrCreate()

@@ -14,4 +14,4 @@ class Config(pydantic.BaseModel):
     @staticmethod
     def from_toml(toml_file: Path):
         with toml_file.open("rb") as fp:
-            return Config.parse_obj(tomllib.load(fp))
+            return Config.model_validate(tomllib.load(fp))
